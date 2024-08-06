@@ -25,7 +25,7 @@ export const actions = {
         const result = await res.json();
         const accessToken = jwtDecode(result.access_token)
 
-        if (result.access_token && accessToken.role === '99') {
+        if (result.access_token && accessToken.role === '99' || accessToken.role === '2') {
             cookies.set('accessToken', result.access_token, {
                 path: '/',
                 sameSite: 'strict',
